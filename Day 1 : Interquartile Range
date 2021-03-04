@@ -1,0 +1,32 @@
+
+
+def median(X):       #funtion for Q1
+    n=len(X)
+    if n%2==1:
+        return X[n//2]
+    else:
+        return (X[n//2 -1 ]+ X[n//2])/2
+    
+
+
+
+
+
+n=int(input())
+X=list(map(int,input().split()))
+F= list(map(int,input().split()))
+
+S = []
+for x, f in zip(X,F):
+    S.extend([x]*f)     #multiplication of frequency & observations
+    S=sorted(S)
+    
+n=len(S)
+if n%2==1:
+    Q1= median(S[:n//2])    
+    Q3=median(S[n//2+1:])
+else:
+    Q1= median(S[:n//2])
+    Q3=median(S[n//2:])
+
+print("{:.1f}".format(Q3 - Q1))

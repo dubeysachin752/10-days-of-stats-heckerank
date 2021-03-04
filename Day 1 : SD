@@ -1,0 +1,12 @@
+n = int(input())   #arra_size
+x = list(map(int, input().split()))  #input_array
+
+Σ = sum
+
+# (mean)
+mean = sum(x) / n
+
+# (standard deviation)
+SD = (sum((i - mean) ** 2 for i in x) / n) ** 0.5
+
+print("{:.1f}".format(SD))

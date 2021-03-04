@@ -1,0 +1,25 @@
+
+
+
+# b(x,n,p) = C(n,p) * p^x * (1-p)^(n-x)
+# x: number of successes
+# n: total number of trials
+# p: probability of success of 1 trial
+
+
+
+
+from math import factorial    #for calculating  factorial 
+
+def b(n, x, p):
+    return (factorial(n) // (factorial(n - x) * factorial(x))) * (p ** x) * (1 - p) ** (n - x)
+
+p, n = map(int, input().split())
+
+p = p / 100    
+
+r1 = b(n, 0, p) + b(n, 1, p) + b(n, 2, p)        # 0 out 1 out 2 rejects
+print("%.3f" % r1)
+
+r2 = sum(b(n, i, p) for i in range(2, n + 1))    # 2 out 12 rejects
+print("%.3f" % r2)

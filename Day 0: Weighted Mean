@@ -1,0 +1,6 @@
+n = int(input())                           #number of array
+X = list(map(int, input().split()))     #array_1
+W = list(map(int, input().split()))     #array_2
+
+m = sum(x * w for x, w in zip(X, W)) / sum(W)    #formulation of the concept
+print("{:.1f}".format(m))

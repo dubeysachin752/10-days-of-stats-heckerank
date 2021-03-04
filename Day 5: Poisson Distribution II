@@ -1,0 +1,12 @@
+import math
+
+def poisson(y, k):
+    return y ** k * math.e ** (-y) / math.factorial(k)
+
+def E(y):
+    return y + y ** 2
+
+y1, y2 = map(float, input().split())
+
+print("{:.3f}".format(160 + 40 * E(y1)))
+print("{:.3f}".format(128 + 40 * E(y2)))

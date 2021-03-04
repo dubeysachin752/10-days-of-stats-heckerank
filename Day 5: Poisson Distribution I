@@ -1,0 +1,9 @@
+import math
+
+def pois_dist(y, k):
+    return y** k * math.e ** (-y) / math.factorial(k)
+
+y = float(input())
+k = int(input())
+
+print("{:.3f}".format(pois_dist(y, k)))

@@ -1,0 +1,15 @@
+
+
+import math
+
+n=int(input())
+mu= float(input())
+sigma=float(input())
+percentage= float(input())
+z=float(input())
+
+
+e=z*sigma/math.sqrt(n)
+
+print('{:0.2f}'.format(mu-e))
+print('{:0.2f}'.format(mu+e))

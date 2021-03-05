@@ -1,1 +1,1 @@
-# 10-days-of-stats-HackeRank
+# 10-days-of-stats-HackerRank

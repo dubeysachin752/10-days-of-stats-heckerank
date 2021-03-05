@@ -1,0 +1,26 @@
+
+import math
+P=math.pi
+
+def normal_dist(x,mu,sigma):        #Normal distribution
+    return math.exp(-(x-mu)**2/(2*mu*mu))/(2*sigma*math.sqrt(2*P))
+
+
+
+def fi(x, mu, sigma):    #commulating Probability
+    
+    return 1 / 2 * (1 + math.erf((x - mu) / (sigma * math.sqrt(2))))
+
+
+mu,sigma=map(float,input().split())
+q1 =int(input())
+q2 =int(input())
+
+#percentage of student having gredes>q1 
+print("{:0.2f}".format(100 - fi(q1,mu,sigma)*100))
+
+#percentage of student having gredes >= q1 
+print("{:0.2f}".format(100 - fi(q2,mu,sigma)*100))
+
+#percentage of student having gredes < q2
+print("{:0.2f}".format( fi(q2,mu,sigma)*100)) 

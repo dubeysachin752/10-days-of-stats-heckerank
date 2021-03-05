@@ -1,0 +1,14 @@
+import math 
+
+def fi(x,mu,sigma):
+    return 1 / 2 * (1 + math.erf((x - mu) / sigma / math.sqrt(2)))
+    #return 1/2*(1+math.erf((x-mu)/(sigma*math.sqrt(2))))
+    
+
+x=float(input())
+n=int(input())
+mu =float(input())
+sigma=float(input()) 
+
+p=fi(x,n*mu,math.sqrt(n)*sigma)
+print("{:0.4f}".format(p))

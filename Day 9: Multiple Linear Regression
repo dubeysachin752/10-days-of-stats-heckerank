@@ -1,9 +1,7 @@
 from sklearn import linear_model
 import numpy as np
 
-# suppress a annoying warning on macOS
-import warnings
-warnings.filterwarnings(action="ignore", module="sklearn", message="^internal gelsd")
+
 
 m, n = map(int, input().split())
 

@@ -1,0 +1,27 @@
+
+import math
+
+def corr(x,mu,sigma):
+    Mx=sum(X)/n             #for mean of X array
+    My=sum(Y)/n             #for mean of Y array
+    
+    Sx=0
+    Sy=0
+    p=0
+    
+    for x,y in zip(X,Y):           #for calculting s.d of every values 
+        Sx += (x-Mx)**2
+        Sy += (y-My)**2
+        p += (x-Mx)*(y-My)
+        
+    Sx=(Sx/ n)**0.5
+    Sy=(Sy/ n)**0.5
+    p=p/(n*Sx*Sy)
+    
+    return p
+    
+n=int(input())
+X=list(map(float,input().split()))
+Y=list(map(float,input().split()))
+
+print('{:.3f}'.format(corr(n,X,Y)))
